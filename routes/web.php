@@ -27,7 +27,12 @@ use Illuminate\Broadcasting\Channel;
 
 Route::get('/', Login::class)->name('auth.signin');
 Route::get('/signup', Signup::class)->name('auth.signup');
-
+Route::get('/resume',function(){
+    return view('resume');
+});
+Route::get('/resumetailwindcss',function(){
+    return view('resumetailwindcss');
+});
 Route::prefix('admin')->group(function()
 {
     Route::get('homapage',Homepage::class)->name('admin.homepage');
@@ -61,6 +66,8 @@ Route::middleware('student')->group(function()
     Route::get('bookmarks',\App\Livewire\Student\Bookmark::class)->name('student.bookmark');
     Route::get('profile',\App\Livewire\Student\Profile::class)->name('student.profile');
     Route::get('chat',\App\Livewire\Student\Chat::class)->name('student.chat');
+    Route::get('resume-builder',\App\Livewire\Student\Resume::class)->name('student.resume');
+
 
 
     Route::get('logout',function(){

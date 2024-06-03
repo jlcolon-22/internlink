@@ -12,7 +12,8 @@ export default {
   theme: {
     extend: {
         colors:{
-            pup: '#791417'
+            pup: '#791417',
+            resume:'#8d9e78'
         }
     },
   },

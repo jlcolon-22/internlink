@@ -1,6 +1,6 @@
 <div>
     <div class="min-h-[100svh] flex justify-center py-20 bg-gray-100">
-        <div>
+        <div class=" w-full">
             <div class="flex justify-center items-center gap-2 mb-5">
                 <div
                     class="font-bold flex justify-center items-center  text-2xl  bg-[#791417] h-[3rem] w-[3rem] text-white   rounded-full">
@@ -8,46 +8,51 @@
                 </div>
                 <p class="text-5xl font-bold">Internlink</p>
             </div>
-            <div class="bg-white shadow w-[30rem] rounded-lg divide-y divide-gray-200">
+            <div class="bg-white shadow max-w-screen-md mx-auto rounded-lg divide-y divide-gray-200">
 
-                <form wire:submit='signup' class="px-5 py-2">
+                <form wire:submit='signup' class="px-5 py-5">
                     <h1 class="pb-7 text-3xl font-bold">Sign Up</h1>
-                    <div class="mb-5">
-                        <label class="font-semibold text-sm  text-gray-600 pb-1 block">First name</label>
-                        <input type="text" wire:model="firstname"
-                            class="border border-black/30 rounded-lg px-3 py-2 mt-1  text-sm w-full" required />
-                        @error('firstname')
-                            <small class="text-red-500">{{ $message }}</small>
-                        @enderror
+                    <div class="grid grid-cols-2 gap-8 mb-5">
+                        <div class="">
+                            <label class="font-semibold text-sm  text-gray-600 pb-1 block">First name</label>
+                            <input type="text" wire:model="firstname"
+                                class="border border-black/30 rounded-lg px-3 py-2 mt-1  text-sm w-full" required />
+                            @error('firstname')
+                                <small class="text-red-500">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="">
+                            <label class="font-semibold text-sm  text-gray-600 pb-1 block">Last Name</label>
+                            <input type="text" wire:model="lastname"
+                                class="border border-black/30 rounded-lg px-3 py-2 mt-1  text-sm w-full" required />
+                            @error('lastname')
+                                <small class="text-red-500">{{ $message }}</small>
+                            @enderror
+                        </div>
+
                     </div>
-                    <div class="mb-5">
-                        <label class="font-semibold text-sm  text-gray-600 pb-1 block">Last Name</label>
-                        <input type="text" wire:model="lastname"
-                            class="border border-black/30 rounded-lg px-3 py-2 mt-1  text-sm w-full" required />
-                        @error('lastname')
-                            <small class="text-red-500">{{ $message }}</small>
-                        @enderror
+                    <div class="grid grid-cols-2 mb-5 gap-8">
+                        <div class="">
+                            <label class="font-semibold text-sm  text-gray-600 pb-1 block">Student Number</label>
+                            <input type="text" wire:model="student_number"
+                                class="border border-black/30 rounded-lg px-3 py-2 mt-1  text-sm w-full" required />
+                            @error('student_number')
+                                <small class="text-red-500">{{ $message }}</small>
+                            @enderror
+                        </div>
+
+                        <div class="">
+                            <label class="font-semibold text-sm  text-gray-600 pb-1 block">Course</label>
+                            <input type="text" wire:model="course"
+                                class="border border-black/30 rounded-lg px-3 py-2 mt-1  text-sm w-full" required />
+                            @error('course')
+                                <small class="text-red-500">{{ $message }}</small>
+                            @enderror
+                        </div>
                     </div>
 
-                    <div class="mb-5">
-                        <label class="font-semibold text-sm  text-gray-600 pb-1 block">Student Number</label>
-                        <input type="text" wire:model="student_number"
-                            class="border border-black/30 rounded-lg px-3 py-2 mt-1  text-sm w-full" required />
-                        @error('student_number')
-                            <small class="text-red-500">{{ $message }}</small>
-                        @enderror
-                    </div>
-
-                    <div class="mb-5">
-                        <label class="font-semibold text-sm  text-gray-600 pb-1 block">Course</label>
-                        <input type="text" wire:model="course"
-                            class="border border-black/30 rounded-lg px-3 py-2 mt-1  text-sm w-full" required />
-                        @error('course')
-                            <small class="text-red-500">{{ $message }}</small>
-                        @enderror
-                    </div>
-
-                    <div class="mb-5">
+                   <div class="grid grid-cols-2 gap-8 mb-5">
+                    <div>
                         <label class="font-semibold text-sm  text-gray-600 pb-1 block">E-mail</label>
                         <input type="email" wire:model="email"
                             class="border border-black/30 rounded-lg px-3 py-2 mt-1  text-sm w-full" required />
@@ -56,7 +61,7 @@
                         @enderror
                     </div>
 
-                    <div class="mb-5">
+                    <div>
                         <label class="font-semibold text-sm  text-gray-600 pb-1 block">Mobile Number</label>
                         <input type="text" wire:model="mobile_number"
                             class="border border-black/30 rounded-lg px-3 py-2 mt-1  text-sm w-full" required />
@@ -64,6 +69,7 @@
                             <small class="text-red-500">{{ $message }}</small>
                         @enderror
                     </div>
+                   </div>
 
                     <div class="mb-5">
                         <label class="font-semibold text-sm text-gray-600 pb-1 block">Password</label>
